@@ -1,7 +1,7 @@
-#chatspaceデータベース設計  
+#chatspaceデータベース設計
 
-##概要  
-chatspaceのデータベース設計です。  
+##概要
+chatspaceのデータベース設計です。
 
 ##作成テーブル
 | column | type |
