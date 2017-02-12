@@ -7,18 +7,18 @@ chatspaceのデータベース設計です。
 
 chatテーブル  
 
-|text|image|user_id|
-|:--:|:--:|:--:|
-|text|text|integer|  
+|text|image|user_id|gruop_id|
+|:--:|:--:|:--:|:--:|
+|text|text|integer|integer|  
   
 userテーブル  
   
 |nickname|email|password|chat_id|group_id|
 |:--:|:--:|:--:|:--:|:--:|
-|string|string|stirng|integer|integer|  
+|string|text|stirng|integer|integer|  
 
 gruopテーブル  
   
-|groupname|user_id|
-|:--:|:--:|
-|string|integer|
+|groupname|
+|:--:|
+|string|
