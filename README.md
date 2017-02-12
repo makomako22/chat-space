@@ -8,16 +8,16 @@ chatspaceのデータベース設計です。
 chatsテーブル  
 
 |column|type|
-|:—–:|:———-:|
+|:--:|:----:|
 |text|text|
 |image|text|
 |user_id|integer|
 |gruop_id|integer|  
-  
+
 usersテーブル  
 
 |column|type|
-|:—–:|:———-:|
+|:--:|:----:|
 |nickname|string|
 |email|text|
 |password|string|
@@ -26,5 +26,5 @@ usersテーブル
 gruopsテーブル  
 
 |column|type|
-|:—–:|:———-:|
-|name|string|
+|:--:|:----:|
+|key|string|
