@@ -5,20 +5,26 @@ chatspaceのデータベース設計です。
 
 ## 作成テーブル  
 
-chatテーブル  
+chatsテーブル  
 
-|text|image|user_id|gruop_id|
-|:--:|:--:|:--:|:--:|
-|text|text|integer|integer|  
+|column|type|
+|:—–:|:———-:|
+|text|text|
+|image|text|
+|user_id|integer|
+|gruop_id|integer|  
   
-userテーブル  
-  
-|nickname|email|password|chat_id|group_id|
-|:--:|:--:|:--:|:--:|:--:|
-|string|text|stirng|integer|integer|  
+usersテーブル  
 
-gruopテーブル  
-  
-|groupname|
-|:--:|
-|string|
+|column|type|
+|:—–:|:———-:|
+|nickname|string|
+|email|text|
+|password|string|
+|group_id|integer|
+
+gruopsテーブル  
+
+|column|type|
+|:—–:|:———-:|
+|name|string|
