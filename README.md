@@ -11,14 +11,14 @@ chatspaceのデータベース設計です。
 |:--:|:----:|
 |text|text (not null)|
 |image|text|
-|user_id|integer(foreign_key: true)|
-|gruop_id|integer(foreign_key: true)|
+|user_id|integer (foreign_key: true)|
+|gruop_id|integer (foreign_key: true)|
 
 ### usersテーブル（deviseで作成）
 
 |column|type|
 |:--:|:----:|
-|nickname|string (not null,add_index)|
+|nickname|string (not null, add_index)|
 |email|text (not null)|
 |password|string (not null)|
 
@@ -32,8 +32,8 @@ chatspaceのデータベース設計です。
 
 |column|type|
 |:--:|:----:|
-|user_id|integer(foreign_key: true)|
-|gruop_id|integer(foreign_key: true)|
+|user_id|integer (foreign_key: true)|
+|gruop_id|integer (foreign_key: true)|
 
 ## アソシエーション定義
 * chat model:  
@@ -48,6 +48,6 @@ has_many :gruops, through: :gruop_users
 has_many :chats  
 has_many :users, through: :gruop_users
 
-* gruop_users:  
+* gruop_users model:  
 belongs_to :user  
 belongs_to :gruop
