@@ -19,7 +19,7 @@ chatspaceのデータベース設計です。
 |column|type|
 |:--:|:----:|
 |nickname|string (not null, add_index)|
-|email|text (not null)|
+|email|string (not null)|
 |password|string (not null)|
 
 ### gruopsテーブル
