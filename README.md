@@ -14,7 +14,7 @@ chatspaceのデータベース設計です。
 |user_id|integer|
 |gruop_id|integer|
 
-### usersテーブル
+### usersテーブル（deviseで作成）
 
 |column|type|
 |:--:|:----:|
