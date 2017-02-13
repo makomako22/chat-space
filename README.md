@@ -33,7 +33,7 @@ chatspaceのデータベース設計です。
 |column|type|
 |:--:|:----:|
 |user_id|integer(foreign_key: true)|
-|gruops_id|integer(foreign_key: true)|
+|gruop_id|integer(foreign_key: true)|
 
 ## アソシエーション定義
 * chat model:  
