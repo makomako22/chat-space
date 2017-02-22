@@ -7,7 +7,7 @@
       height: 100px;
       padding: 0 20px;
       background-color: #253141;
-      .user__name{
+      &__name{
         font-size: 16px;
         font-weight: bold;
         color: $color-white;
@@ -25,11 +25,11 @@
     }
     .gruop{
       padding: 20px 20px;
-        .gruop__name {
+        &__name {
           font-size: 15px;
           color: $color-white;
         }
-        .gruop__text {
+        &__text {
           padding: 5px 0 0px 0;
           font-size: 11px;
           color: $color-white;

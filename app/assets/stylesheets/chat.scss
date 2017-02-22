@@ -11,7 +11,7 @@ body {
     height: 100px;
     background-color: $color-white;
     border-bottom : thin solid #eeeeee;
-    .top__gruop {
+    &__gruop {
       float: left;
         .top__gruop--name {
           font-size: 20px;
@@ -23,7 +23,7 @@ body {
           color: #999999;
         }
     }
-    .top__edit {
+    &__edit {
       line-height: 40px;
       margin: 28px 0px;
       padding: 0px 20px;
@@ -38,7 +38,7 @@ body {
     height: calc(100vh - 197px);
     background-color: $color-white;
     opacity: 0.95;
-      .chat__box {
+      &__box {
         margin-top: 40px;
         .chat__box--name {
           font-size: 16px;
@@ -47,14 +47,14 @@ body {
           margin-right: 10px;
           float: left;
         }
-        .chat__box--date {
+        &--date {
           font-size: 12px;
           color: #999999;
           padding: 4px 0;
           line-height: 16px;
           float: left;
         }
-        .chat__box--text {
+        &--text {
           font-size: 14px;
           line-height: 16px;
           color: #434A54;
@@ -67,14 +67,14 @@ body {
   height: 50px;
   padding: 20px 40px;
   background-color: #DDDDDD;
-    .message__box {
+    &__box {
       width: calc(100% - 115px);
       height: 50px;
       padding-left: 10px;
       background-color: $color-white;
       box-sizing: border-box;
       float: left;
-      .message__box--message {
+      &--message {
         line-height: 50px;
         font-size: 16px;
         color: #434A54;
@@ -87,7 +87,7 @@ body {
         float: right;
       }
     }
-    .message__send {
+    &__send {
       line-height: 50px;
       margin-left: 15px;
       width: 100px;
