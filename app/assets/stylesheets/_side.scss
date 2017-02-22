@@ -1,0 +1,38 @@
+.chat-side{
+  width: 300px;
+  height: 100vh;
+  background-color: #2f3e51;
+  float: left;
+    .user{
+      height: 100px;
+      padding: 0 20px;
+      background-color: #253141;
+      .user__name{
+        font-size: 16px;
+        font-weight: bold;
+        color: $color-white;
+        line-height: 20px;
+        padding: 40px 0;
+        float: left;
+      }
+      .icon{
+        font-size: 20px;
+        color: $color-white;
+        line-height: 20px;
+        padding: 40px 0 40px 9px;
+        float: right;
+      }
+    }
+    .gruop{
+      padding: 20px 20px;
+        .gruop__name {
+          font-size: 15px;
+          color: $color-white;
+        }
+        .gruop__text {
+          padding: 5px 0 0px 0;
+          font-size: 11px;
+          color: $color-white;
+        }
+    }
+}
