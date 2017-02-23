@@ -1,8 +1,11 @@
 .chat-side
   .user
-    .user__name 荒木真
-    .icon.fa.fa-cog
-    .icon.fa.fa-pencil-square-o
+    .user__name
+      = current_user.name
+    = link_to edit_user_registration_path, class: 'icon' do
+      %icon.fa.fa-cog
+    = link_to "hoge", class: 'icon' do
+      %icon.fa.fa-pencil-square-o
   .gruop
     .gruop__name テストグループ1
     .gruop__text テスト1
