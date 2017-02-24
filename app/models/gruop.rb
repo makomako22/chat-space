@@ -1,0 +1,2 @@
+class Gruop < ApplicationRecord
+end
