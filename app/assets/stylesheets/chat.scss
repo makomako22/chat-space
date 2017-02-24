@@ -1,6 +1,17 @@
 body {
   width: 100vw;
 }
+p.flash {
+  color: $color-white;
+  text-align: center;
+  line-height: 30px;
+    &__notice {
+      background-color: #38AEF0;
+    }
+    &__alert {
+      background-color: #d65f4c;
+    }
+}
 .chat-main {
   height: 100vh;
   width: calc(100vw - 300px);
