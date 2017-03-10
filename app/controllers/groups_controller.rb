@@ -1,5 +1,7 @@
 class GroupsController < ApplicationController
 
+  before_action :find_group, only: [:edit, :update]
+
   def new
     @group = Group.new
   end
@@ -14,9 +16,27 @@ class GroupsController < ApplicationController
     end
   end
 
+  def edit
+    @users = User.all
+  end
+
+  def update
+    @group.assign_attributes(group_params)
+    if @group.save
+      redirect_to root_path, notice: "チャットグループが更新されました"
+    else
+      flash[:alert] = "nameを入力してください"
+      render :new
+    end
+  end
+
   private
   def group_params
     params.require(:group).permit(:name, user_ids:[])
+  end
+
+  def find_group
+    @group = Group.find(params[:id])
   end
 
 end
