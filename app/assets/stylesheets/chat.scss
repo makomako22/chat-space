@@ -22,7 +22,7 @@ p.flash {
     height: 100px;
     background-color: $color-white;
     border-bottom : thin solid #eeeeee;
-    &__gruop {
+    &__group {
       float: left;
         &--name {
           font-size: 20px;
@@ -41,6 +41,11 @@ p.flash {
       border : 2px solid #38AEF0;
       color: #38AEF0;
       float: right;
+        a {
+        color: #38AEF0;
+        font-size: 14px;
+        text-decoration: none;
+      }
     }
   }
 
@@ -90,6 +95,12 @@ p.flash {
         font-size: 16px;
         color: #434A54;
         float: left;
+      }
+      &--text{
+        margin: 12px 0px 0px 10px;
+        font-size: 16px;
+        color: #a5a5a5;
+        border: none;
       }
       .icon {
         margin-right: 10px;

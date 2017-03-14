@@ -11,6 +11,7 @@
     letter-spacing: 2px;
     font-size: 24px;
     text-align: center;
+    font-weight: bold;
   }
 
   &__errors {
@@ -42,7 +43,7 @@
   &__field {
     margin-top: 30px;
 
-    &__field--left {
+    &--left {
       float: left;
       width: 30%;
       padding-right: 20px;
@@ -50,7 +51,7 @@
       box-sizing: border-box;
     }
 
-    &__field--right {
+    &--right {
       float: right;
       width: 70%;
     }
@@ -103,4 +104,9 @@
     background-color: #38aef0;
     border: 0;
   }
+}
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
 }
