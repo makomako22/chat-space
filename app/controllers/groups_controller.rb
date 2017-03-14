@@ -1,9 +1,8 @@
 class GroupsController < ApplicationController
-
-  before_action :find_group, only: [:index, :edit, :update]
+  before_action :find_group, only: [:edit, :update]
 
   def index
-    @groups = Group.all
+    @groups = current_user.groups
   end
 
   def new
@@ -21,7 +20,6 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @users = User.all
   end
 
   def update
@@ -40,7 +38,7 @@ class GroupsController < ApplicationController
   end
 
   def find_group
-    @group = Group.find(1)
+    @group = Group.find(params[:id])
   end
 
 end
