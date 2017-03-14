@@ -3,6 +3,7 @@
   height: 100vh;
   background-color: #2f3e51;
   float: left;
+  overflow: auto;
     .user{
       height: 100px;
       padding: 0 20px;
@@ -25,6 +26,9 @@
     }
     .gruop{
       padding: 20px 20px;
+        a {
+        text-decoration: none;
+        }
         &__name {
           font-size: 15px;
           color: $color-white;
@@ -34,5 +38,8 @@
           font-size: 11px;
           color: $color-white;
         }
+        &:hover {
+          background-color: #3f4e61;
+      }
     }
 }

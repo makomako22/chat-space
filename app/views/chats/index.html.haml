@@ -1,10 +1,12 @@
 = render 'side'
 .chat-main
   .top
-    .top__gruop
-      .top__gruop--name テストグループ1
-      .top__gruop--member Members: 荒木真
-    .top__edit Edit
+    .top__group
+      .top__group--name
+        = @group.name
+      .top__group--member Members: 荒木真
+    .top__edit
+      =link_to "Edit", edit_group_path(@group)
   .chat
     .chat__box
       .chat__box--name 荒木真
@@ -15,7 +17,9 @@
       .chat__box--date 2017/02/12 01:29:36
       .chat__box--text テスト投稿その2
   .message
-    .message__box
-      .message__box--message type a message
-      .icon.fa.fa-picture-o
-    .message__send Send
+    = form_for [@group, @chat] do |f|
+      .message__box
+        %i.icon.fa.fa-picture-o
+        .message__box--text
+          = f.text_field :text, placeholder: "type a message"
+      = f.submit :Send, class: "message__send"
