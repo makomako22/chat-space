@@ -50,12 +50,12 @@ p.flash {
   }
 
   .chat {
-    padding: 6px 40px 0px 40px;
+    padding: 15px 40px 0px 40px;
     height: calc(100vh - 197px);
     background-color: $color-white;
     opacity: 0.95;
       &__box {
-        margin-top: 40px;
+        margin-bottom: 40px;
         &--name {
           font-size: 16px;
           font-weight: bold;
@@ -97,6 +97,7 @@ p.flash {
         float: left;
       }
       &--text{
+        width: 100%;
         margin: 12px 0px 0px 10px;
         font-size: 16px;
         color: #a5a5a5;
