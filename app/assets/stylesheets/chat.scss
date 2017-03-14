@@ -50,12 +50,12 @@ p.flash {
   }
 
   .chat {
-    padding: 15px 40px 0px 40px;
-    height: calc(100vh - 206px);
+    padding: 6px 40px 0px 40px;
+    height: calc(100vh - 197px);
     background-color: $color-white;
     opacity: 0.95;
       &__box {
-        margin-bottom: 40px;
+        margin-top: 40px;
         &--name {
           font-size: 16px;
           font-weight: bold;
@@ -80,43 +80,42 @@ p.flash {
       }
   }
   .message {
-  height: 50px;
-  padding: 20px 40px;
-  background-color: #DDDDDD;
+    position: fixed;
+    width: calc(100% - 380px);
+    height: 50px;
+    padding: 20px 40px;
+    background-color: #DDDDDD;
     &__box {
+      position: relative;
       width: calc(100% - 115px);
       height: 50px;
-      padding-left: 10px;
       background-color: $color-white;
       box-sizing: border-box;
       float: left;
-      &--message {
-        line-height: 50px;
-        font-size: 16px;
-        color: #434A54;
-        float: left;
-      }
       &--text{
-        width: 100%;
-        margin: 12px 0px 0px 10px;
+        padding-left: 10px;
         font-size: 16px;
-        color: #a5a5a5;
+        height: 48px;
+        width: calc(100% - 10px);
         border: none;
       }
       .icon {
-        margin-right: 10px;
+        position: absolute;
+        right: 10px;
+        bottom: -1px;
         line-height: 50px;
         color: #253141;
-        float: right;
       }
     }
     &__send {
+      display: block;
       line-height: 50px;
       margin-left: 15px;
       width: 100px;
       background-color: #38AEF0;
       color: white;
       text-align: center;
+      border: none;
       float: right;
     }
   }
