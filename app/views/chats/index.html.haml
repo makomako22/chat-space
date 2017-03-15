@@ -14,9 +14,8 @@
     = render @chats
   .message
     = form_for [@group, @chat] do |f|
-      - f.label :text
       .message__box
+        = f.text_field :text, placeholder: "type a message", class: "message__box--text"
         .i.icon.fa.fa-picture-o
-        .message__box--text
-        = f.text_field :text, placeholder: "type a message"
       = f.submit :Send, class: "message__send"
+
