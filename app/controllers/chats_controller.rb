@@ -9,8 +9,11 @@ class ChatsController < ApplicationController
 
   def create
     @chat = @group.chats.new(chat_params)
-    @chat.save
-    redirect_to root_path, notice: "メッセージを作成できました。"
+    if @chat.save
+      redirect_to root_path, notice: "メッセージを作成できました。"
+    else
+      redirect_to root_path, alert: "テキストを入力してください"
+    end
   end
 
   private
