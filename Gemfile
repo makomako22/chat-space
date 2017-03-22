@@ -35,11 +35,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'haml-rails'
-  gem "font-awesome-rails"
-  gem 'devise'
   gem 'rspec-rails'
-  gem 'factory_girl_rails', "~> 4.4.1"
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -50,8 +48,7 @@ group :development do
   gem 'erb2haml'
 end
 
-group :test do
-  gem 'faker'
-end
-
 gem 'rake', '< 11.0'
+gem 'haml-rails'
+gem "font-awesome-rails"
+gem 'devise'
