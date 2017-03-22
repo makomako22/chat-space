@@ -53,3 +53,5 @@ end
 group :test do
   gem 'faker'
 end
+
+gem 'rake', '< 11.0'
