@@ -38,7 +38,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'faker'
-  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -47,6 +46,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'erb2haml'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'rails-controller-testing'
 end
 
 gem 'rake', '< 11.0'
