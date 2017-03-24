@@ -5,7 +5,9 @@ RSpec.describe ChatsController, type: :controller do
   let(:group) { create(:group) }
   let(:chat) { create(:chat) }
 
-
+  before do
+    login_user
+  end
 
   describe 'GET #index' do
 
