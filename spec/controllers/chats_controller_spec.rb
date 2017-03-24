@@ -1,18 +1,16 @@
 require 'rails_helper'
 
-describe ChatsController do
+RSpec.describe ChatsController, type: :controller do
   let(:user) { create(:user) }
   let(:group) { create(:group) }
   let(:chat) { create(:chat) }
 
-  before do
-    login_user
-  end
+
 
   describe 'GET #index' do
 
     before do
-      get :index, params: {group_id: group.id}
+      get :index, group_id: group
     end
 
     it 'renders the :index template' do
@@ -38,7 +36,7 @@ describe ChatsController do
     it 'dose not save a new chat without body' do
       chat = build(:chat, text: nil)
       chat.valid?
-      expect(message.errors[:text]).to include('を入力してください。')
+      expect(chat.errors[:text]).to include('を入力してください。')
     end
 
   end
