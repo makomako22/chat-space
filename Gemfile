@@ -48,6 +48,11 @@ group :development do
   gem 'erb2haml'
 end
 
+group :test do
+  gem 'factory_girl_rails'
+  gem 'rails-controller-testing'
+end
+
 gem 'rake', '< 11.0'
 gem 'haml-rails'
 gem "font-awesome-rails"
