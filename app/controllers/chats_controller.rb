@@ -11,8 +11,8 @@ class ChatsController < ApplicationController
     @chat = @group.chats.new(chat_params)
     if @chat.save
       respond_to do |format|
-        format.html { redirect_to group_chats_path(@group) }
-        format.json { render json: @chat }
+        format.html
+        format.json
       end
     else
       redirect_to group_chats_path(@group), alert: "テキストを入力してください"
