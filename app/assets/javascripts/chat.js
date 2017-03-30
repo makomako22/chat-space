@@ -1,16 +1,21 @@
 $(function() {
-  function buildHTML(chat) {
-    var html = $('<div class="chat__box">').append(chat.content);
+  function buildHTML(data) {
+    var html =
+     '<div class="chat__box">' +
+        '<div class="chat__box--name">' + chat.user.name + '</div>' +
+        '<div class="chat__box--date">' + chat.date + '</div>' +
+        '<div class="chat__box--text">' + chat.text + '</div>' +
+      '</div>';
     return html;
   }
 
-  $('message__box').on('submit', function(event){
-    event.preventDefault();
-    var textField = $('message__box--text');
+  $('.message').on('submit', function(e) {
+    e.preventDefault();
+    var textField = $('.message__box--text');
     var text = textField.val();
-    $ajax({
+    $.ajax({
       type: 'POST',
-      url: '/chats.json',
+      url: './chats',
       data: {
         chat: {
           text: text
@@ -20,11 +25,11 @@ $(function() {
     })
     .done(function(data) {
       var html = buildHTML(data);
-      $('.chat--box').append(html);
+      $('.chat__box').append(html);
       textField.val('');
-      })
+    })
     .fail(function() {
       alert('error');
     });
   });
-})
+});
