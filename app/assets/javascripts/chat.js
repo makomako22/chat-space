@@ -1,5 +1,5 @@
 $(function() {
-  function buildHTML(data) {
+  function buildHTML(chat) {
     var html =
      '<div class="chat__box">' +
         '<div class="chat__box--name">' + chat.user.name + '</div>' +
