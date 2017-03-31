@@ -4,7 +4,7 @@ $(function() {
      `<div class="chat__box">
         <div class="chat__box--name">
          chat.user.name
-        </div>
+         </div>
         <div class="chat__box--date">
           chat.date
         </div>
@@ -15,10 +15,13 @@ $(function() {
     return html;
   }
 
-  $('.chat_form').on('submit', function(e) {
+  $('.message').on('submit', function(e) {
     e.preventDefault();
+    console.log("確認");
     var textField = $('.message__box--text');
-    var formData = new FormData($('.chat_form').get(0));
+    console.log(textField);
+    var formData = new FormData($('.message').get(0));
+    console.log(formData);
     $.ajax({
       type: 'POST',
       url: './chats',
@@ -28,12 +31,16 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
+      console.log("ここまでの確認");
       var html = buildHTML(data);
+      console.log(html);
       $('.chat__box').append(html);
       textField.val('');
     })
     .fail(function() {
+      console.log("エラーメッセージ");
       alert('error');
     });
+    return false;
   });
 });
