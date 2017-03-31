@@ -15,7 +15,7 @@ class ChatsController < ApplicationController
         format.json
       end
     else
-      redirect_to group_chats_path(@group), alert: "テキストを入力してください"
+      render :index, alert: "テキストを入力してください"
     end
   end
 
