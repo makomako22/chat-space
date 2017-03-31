@@ -1,10 +1,15 @@
 $(function() {
   function buildHTML(chat) {
     var html =
-     `<div class="chat__box"> +
-        <div class="chat__box--name"> + chat.user.name + </div> +
-        <div class="chat__box--date"> + chat.date + </div> +
-        <div class="chat__box--text"> + chat.text + </div> +
+     `<div class="chat__box">
+        <div class="chat__box--name">
+         chat.user.name
+        </div>
+        <div class="chat__box--date">
+          chat.date + </div>
+        <div class="chat__box--text">
+          chat.text
+        </div>
       </div>`;
     return html;
   }
