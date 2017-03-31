@@ -6,7 +6,8 @@ $(function() {
          chat.user.name
         </div>
         <div class="chat__box--date">
-          chat.date + </div>
+          chat.date
+        </div>
         <div class="chat__box--text">
           chat.text
         </div>
