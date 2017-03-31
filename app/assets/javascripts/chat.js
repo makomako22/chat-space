@@ -1,27 +1,25 @@
 $(function() {
   function buildHTML(chat) {
     var html =
-     '<div class="chat__box">' +
-        '<div class="chat__box--name">' + chat.user.name + '</div>' +
-        '<div class="chat__box--date">' + chat.date + '</div>' +
-        '<div class="chat__box--text">' + chat.text + '</div>' +
-      '</div>';
+     `<div class="chat__box"> +
+        <div class="chat__box--name"> + chat.user.name + </div> +
+        <div class="chat__box--date"> + chat.date + </div> +
+        <div class="chat__box--text"> + chat.text + </div> +
+      </div>`;
     return html;
   }
 
-  $('.message').on('submit', function(e) {
+  $('.chat_form').on('submit', function(e) {
     e.preventDefault();
     var textField = $('.message__box--text');
-    var text = textField.val();
+    var formData = new FormData($('.chat_form').get(0));
     $.ajax({
       type: 'POST',
       url: './chats',
-      data: {
-        chat: {
-          text: text
-        }
-      },
-      dataType: 'json'
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
     })
     .done(function(data) {
       var html = buildHTML(data);
