@@ -13,7 +13,7 @@
   .chat
     = render @chats
   .message
-    = form_for [@group, @chat], class: "chat_form" do |f|
+    = form_for [@group, @chat], html: {class: "chat_form"} do |f|
       .message__box
         = f.text_field :text, placeholder: "type a message", class: "message__box--text"
         .i.icon.fa.fa-picture-o
