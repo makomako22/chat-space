@@ -18,11 +18,8 @@ $(document).on('turbolinks:load', function(){
 
   $('.chat_form').on('submit', function(e) {
     e.preventDefault();
-    console.log("確認");
     var textField = $('#chat_text');
-    console.log(textField);
     var formdata = new FormData($(this).get(0));
-    console.log(formdata);
     $.ajax({
       type: 'POST',
       url: './chats',
@@ -40,7 +37,6 @@ $(document).on('turbolinks:load', function(){
       textField.val('');
     })
     .fail(function() {
-      console.log("エラーメッセージ");
       alert('error');
     });
   });
