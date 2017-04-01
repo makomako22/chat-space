@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function(){
 
   function buildHTML(chat) {
-    var html =
+    $('.chat').append(
      `<div class="chat__box">
         <div class="chat__box--name">
          ${chat.name}
@@ -12,14 +12,20 @@ $(document).on('turbolinks:load', function(){
         <div class="chat__box--text">
           ${chat.text}
         </div>
-      </div>`;
-    return html;
+      </div>`);
+  }
+
+  function scroll() {
+    $('.chat').delay(100).animate({
+      scrollTop: $(document).height()
+    },1500);
   }
 
   $('.chat_form').on('submit', function(e) {
     e.preventDefault();
     var textField = $('#chat_text');
     var formdata = new FormData($(this).get(0));
+
     $.ajax({
       type: 'POST',
       url: './chats',
@@ -29,12 +35,9 @@ $(document).on('turbolinks:load', function(){
       contentType: false
     })
     .done(function(data) {
-    $('.chat').delay(100).animate({
-      scrollTop: $(document).height()
-    },1500);
-      var html = buildHTML(data);
-      $('.chat').append(html);
+      buildHTML(data);
       textField.val('');
+      scroll();
     })
     .fail(function() {
       alert('error');
