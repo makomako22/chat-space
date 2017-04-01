@@ -15,10 +15,10 @@ $(document).on('turbolinks:load', function(){
       </div>`);
   }
 
-  function scroll() {
-    $('.chat').delay(100).animate({
+  function scroll(d_time, s_time) {
+    $('.chat').delay(d_time).animate({
       scrollTop: $(document).height()
-    },1500);
+    },s_time);
   }
 
   $('.chat_form').on('submit', function(e) {
@@ -37,7 +37,8 @@ $(document).on('turbolinks:load', function(){
     .done(function(data) {
       buildHTML(data);
       textField.val('');
-      scroll();
+      scroll(100, 1500);
+      $('.message__send').removeAttr('disabled');
     })
     .fail(function() {
       alert('error');
