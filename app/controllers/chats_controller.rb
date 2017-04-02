@@ -10,9 +10,12 @@ class ChatsController < ApplicationController
   def create
     @chat = @group.chats.new(chat_params)
     if @chat.save
-      redirect_to root_path, notice: "メッセージを作成できました。"
+      respond_to do |format|
+        format.html { redirect_to group_chats_path(@group) }
+        format.json
+      end
     else
-      redirect_to root_path, alert: "テキストを入力してください"
+      render :index, alert: "テキストを入力してください"
     end
   end
 
