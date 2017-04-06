@@ -1,7 +1,7 @@
 $(function(){
   var result = $("#user-search-result");
   var select = $("#chat-group-users");
-  var preinput = ''
+  var preInput = ''
 
   function searchUsers(user) {
     var html = $(`
@@ -40,7 +40,7 @@ $(function(){
       $(".chat-group-user__select").remove();
       $.each(data.users, function(i, user){
         searchUsers(user);
-        preinput = input;
+        preInput = input;
       });
     });
   });
