@@ -56,14 +56,22 @@
       width: 70%;
     }
 
-    &__label {
+    &--label {
       display: block;
       line-height: 50px;
       font-weight: bold;
       text-align: right;
     }
 
-    &__input {
+    &--input {
+      float: left;
+      width: 100%;
+      line-height: 30px;
+      padding: 10px 15px;
+      box-sizing: border-box;
+    }
+
+    &--search {
       float: left;
       width: 100%;
       line-height: 30px;
@@ -71,6 +79,7 @@
       box-sizing: border-box;
     }
   }
+
 
   .chat-group-user {
     padding: 0 15px;
@@ -82,16 +91,25 @@
       float: left;
     }
 
+    &__select {
+      padding: 0 15px;
+      line-height: 50px;
+      font-size: 14px;
+      border-bottom: 1px solid #ddd;
+    }
+
     &__btn {
       float: right;
       display: inline-block;
 
       &.chat-group-user__btn--add {
         color: #38aef0;
+        cursor: pointer;
       }
 
       &.chat-group-user__btn--remove {
         color: #f05050;
+        cursor: pointer;
       }
     }
   }
@@ -104,6 +122,7 @@
     border: 0;
   }
 }
+
 .clearfix:after {
   content: "";
   clear: both;
