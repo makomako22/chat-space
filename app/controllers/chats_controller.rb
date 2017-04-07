@@ -21,7 +21,7 @@ class ChatsController < ApplicationController
 
   private
   def chat_params
-    params.require(:chat).permit(:text).merge(user_id: current_user.id)
+    params.require(:chat).permit(:text, :image).merge(user_id: current_user.id)
   end
 
   def set_group
