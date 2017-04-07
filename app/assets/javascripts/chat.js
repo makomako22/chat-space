@@ -1,14 +1,10 @@
 $(document).on('turbolinks:load', function(){
 
   function buildHTML(chat) {
-    if(chat.image) {
-      var chatImage = `
+    var chatImage = chat.image? `
       <div class="chat__box--image">
-        <img src="${chat.image.to_s}">
-      </div>`;
-    }else {
-      var chatImage = '';
-    }
+        <img src="${chat.image.url}">
+      </div>`: '';
     $('.chat').append(
      `<div class="chat__box">
         <div class="chat__box--name">
