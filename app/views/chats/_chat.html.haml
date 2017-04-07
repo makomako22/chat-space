@@ -5,3 +5,5 @@
     = chat.date
   .chat__box--text
     = chat.text
+  .chat__box--image
+  = image_tag chat.image.to_s if chat.image?
