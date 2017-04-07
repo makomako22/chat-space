@@ -1,6 +1,14 @@
 $(document).on('turbolinks:load', function(){
 
   function buildHTML(chat) {
+    if(chat.image) {
+      var chatImage = `
+      <div class="chat__box--image">
+        <img src="${chat.image.to_s}">
+      </div>`;
+    }else {
+      var chatImage = '';
+    }
     $('.chat').append(
      `<div class="chat__box">
         <div class="chat__box--name">
@@ -12,6 +20,7 @@ $(document).on('turbolinks:load', function(){
         <div class="chat__box--text">
           ${chat.text}
         </div>
+          ${chatImage}
       </div>`);
   }
 
