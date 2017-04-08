@@ -3,7 +3,7 @@ $(document).on('turbolinks:load', function(){
   function buildHTML(chat) {
     var chatImage = chat.image? `
       <div class="chat__box--image">
-        <img src="${chat.image.url}">
+        <img src="${chat.image}">
       </div>`: '';
     $('.chat').append(
      `<div class="chat__box">
