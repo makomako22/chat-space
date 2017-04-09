@@ -38,6 +38,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -57,3 +58,5 @@ gem 'rake', '< 11.0'
 gem 'haml-rails'
 gem "font-awesome-rails"
 gem 'devise'
+gem 'carrierwave'
+gem 'mini_magick'

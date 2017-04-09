@@ -1,6 +1,10 @@
 $(document).on('turbolinks:load', function(){
 
   function buildHTML(chat) {
+    var chatImage = chat.image? `
+      <div class="chat__box--image">
+        <img src="${chat.image}">
+      </div>`: '';
     $('.chat').append(
      `<div class="chat__box">
         <div class="chat__box--name">
@@ -12,6 +16,7 @@ $(document).on('turbolinks:load', function(){
         <div class="chat__box--text">
           ${chat.text}
         </div>
+          ${chatImage}
       </div>`);
   }
 
@@ -21,10 +26,10 @@ $(document).on('turbolinks:load', function(){
     },s_time);
   }
 
-  $('.chat_form').on('submit', function(e) {
+  function sendFile(e) {
     e.preventDefault();
     var textField = $('#chat_text');
-    var formdata = new FormData($(this).get(0));
+    var formdata = new FormData($('.chat_form').get(0));
 
     $.ajax({
       type: 'POST',
@@ -39,9 +44,17 @@ $(document).on('turbolinks:load', function(){
       textField.val('');
       scroll(100, 1500);
       $('.message__send').removeAttr('disabled');
-    })
+      })
     .fail(function() {
-      alert('error');
+      alert('テキストか画像を入力してください');
     });
+  }
+
+  $("#image_file").change(function(e) {
+    sendFile(e)
+  });
+
+  $('.chat_form').on('submit', function(e) {
+    sendFile(e)
   });
 });
