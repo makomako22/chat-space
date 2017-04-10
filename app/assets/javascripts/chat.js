@@ -50,6 +50,23 @@ $(document).on('turbolinks:load', function(){
     });
   }
 
+  function autoLoad() {
+
+    $.ajax({
+      type: 'GET',
+      url: './chats',
+      dataType: 'json'
+    })
+    .done(function(data) {
+      $('.chat').empty();
+      $.each(data.chats, function(i, chat) {
+      buildHTML(chat);
+      });
+    })
+  }
+
+  setInterval(autoLoad, 10000);
+
   $("#image_file").change(function(e) {
     sendFile(e)
   });
