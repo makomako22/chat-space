@@ -5,6 +5,11 @@ class ChatsController < ApplicationController
   before_action :set_group_chats, only: :index
 
   def index
+    @chat = Chat.new
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
