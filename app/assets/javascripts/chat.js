@@ -54,7 +54,6 @@ $(document).on('turbolinks:load', function(){
   }
 
   function autoLoad() {
-    var chatCount = $('.chat__box').length;
 
     $.ajax({
       type: 'GET',
@@ -62,10 +61,12 @@ $(document).on('turbolinks:load', function(){
       dataType: 'json'
     })
     .done(function(data) {
-      var currentCount = data.length;
+      var chatCount = $('.chat__box').length;
+      var currentCount = data.chats.length;
       var newCount = (currentCount - chatCount);
-      for (var i = 0; i < newCount; i++) {
-      buildHTML(data[i]);
+      if (newCount > 0) {
+        buildHTML(data);
+        scroll(100, 1500);
       }
     })
   }
