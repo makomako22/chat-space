@@ -1,10 +1,11 @@
 $(document).on('turbolinks:load', function(){
+  var path = location.pathname;
+  var reloadTime = 10000;
 
   function buildHTML(chat) {
     var chatImage = chat.image? `
-      <div class="chat__box--image">
-        <img src="${chat.image}">
-      </div>`: '';
+      <img src="${chat.image}">
+        `: '';
     $('.chat').append(
      `<div class="chat__box">
         <div class="chat__box--name">
@@ -16,7 +17,9 @@ $(document).on('turbolinks:load', function(){
         <div class="chat__box--text">
           ${chat.text}
         </div>
+        <div class="chat__box--image">
           ${chatImage}
+        </div>
       </div>`);
   }
 
@@ -51,6 +54,7 @@ $(document).on('turbolinks:load', function(){
   }
 
   function autoLoad() {
+    var chatCount = $('.chat__box').length;
 
     $.ajax({
       type: 'GET',
@@ -58,14 +62,17 @@ $(document).on('turbolinks:load', function(){
       dataType: 'json'
     })
     .done(function(data) {
-      $('.chat').empty();
-      $.each(data.chats, function(i, chat) {
-      buildHTML(chat);
-      });
+      var currentCount = data.length;
+      var newCount = (currentCount - chatCount);
+      for (var i = 0; i < newCount; i++) {
+      buildHTML(data[i]);
+      }
     })
   }
 
-  setInterval(autoLoad, 10000);
+  if (path.match('/chats')) {
+    setInterval(autoLoad, reloadTime);
+  }
 
   $("#image_file").change(function(e) {
     sendFile(e)
