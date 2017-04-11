@@ -65,8 +65,10 @@ $(document).on('turbolinks:load', function(){
       var currentCount = data.chats.length;
       var newCount = (currentCount - chatCount);
       if (newCount > 0) {
-        buildHTML(data);
+        for (var i = chatCount; i < currentCount; i=(i+1)) {
+          buildHTML(data.chats[i]);
         scroll(100, 1500);
+        }
       }
     })
   }
