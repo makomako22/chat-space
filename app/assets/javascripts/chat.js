@@ -1,10 +1,11 @@
 $(document).on('turbolinks:load', function(){
+  var path = location.pathname;
+  var reloadTime = 10000;
 
   function buildHTML(chat) {
     var chatImage = chat.image? `
-      <div class="chat__box--image">
-        <img src="${chat.image}">
-      </div>`: '';
+      <img src="${chat.image}">
+        `: '';
     $('.chat').append(
      `<div class="chat__box">
         <div class="chat__box--name">
@@ -16,7 +17,9 @@ $(document).on('turbolinks:load', function(){
         <div class="chat__box--text">
           ${chat.text}
         </div>
+        <div class="chat__box--image">
           ${chatImage}
+        </div>
       </div>`);
   }
 
@@ -48,6 +51,30 @@ $(document).on('turbolinks:load', function(){
     .fail(function() {
       alert('テキストか画像を入力してください');
     });
+  }
+
+  function autoLoad() {
+
+    $.ajax({
+      type: 'GET',
+      url: './chats',
+      dataType: 'json'
+    })
+    .done(function(data) {
+      var chatCount = $('.chat__box').length;
+      var currentCount = data.chats.length;
+      var newCount = (currentCount - chatCount);
+      if (newCount > 0) {
+        for (var i = chatCount; i < currentCount; i=(i+1)) {
+          buildHTML(data.chats[i]);
+        scroll(100, 1500);
+        }
+      }
+    })
+  }
+
+  if (path.match('/chats')) {
+    setInterval(autoLoad, reloadTime);
   }
 
   $("#image_file").change(function(e) {
