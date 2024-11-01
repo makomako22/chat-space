@@ -73,8 +73,30 @@ $(document).on('turbolinks:load', function(){
     })
   }
 
+  function loadMyMessages() {
+    $.ajax({
+      type: 'GET',
+      url: './my_messages',
+      dataType: 'json'
+    })
+    .done(function(data) {
+      $('.chat').empty();
+      data.chats.forEach(function(chat) {
+        buildHTML(chat);
+      });
+      scroll(100, 1500);
+    })
+    .fail(function() {
+      alert('メッセージの読み込みに失敗しました');
+    });
+  }
+
   if (path.match('/chats')) {
     setInterval(autoLoad, reloadTime);
+  }
+
+  if (path.match('/my_messages')) {
+    loadMyMessages();
   }
 
   $("#image_file").change(function(e) {

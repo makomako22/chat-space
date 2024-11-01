@@ -1,5 +1,5 @@
 class ChatsController < ApplicationController
-  before_action :set_group, only: [:index, :create]
+  before_action :set_group, only: [:index, :create, :my_messages]
   before_action :set_groups, only: :index
   before_action :set_chat, only: :index
   before_action :set_group_chats, only: :index
@@ -21,6 +21,14 @@ class ChatsController < ApplicationController
       end
     else
       render :index, alert: "テキストを入力してください"
+    end
+  end
+
+  def my_messages
+    @chats = @group.chats.where(user_id: current_user.id)
+    respond_to do |format|
+      format.html
+      format.json
     end
   end
 
